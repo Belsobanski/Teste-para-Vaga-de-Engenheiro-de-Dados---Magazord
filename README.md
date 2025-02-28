@@ -1,6 +1,6 @@
 # Teste para Vaga de Engenheiro de Dados - Magazord
 
-Aqui está o link do teste: Teste - Data Engineer 🚀  https://github.com/Belsobanski/data_engineer_test/blob/master/README.md
+Link do teste: Teste - Data Engineer 🚀  https://github.com/Belsobanski/data_engineer_test/blob/master/README.md
 
 ## Data Lake Simulation
 
