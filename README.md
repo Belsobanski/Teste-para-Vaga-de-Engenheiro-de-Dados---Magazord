@@ -150,7 +150,7 @@ CREATE INDEX idx_transacoes_id_cliente ON transacoes(id_cliente);
 CREATE INDEX idx_transacoes_id_produto ON transacoes(id_produto);
 CREATE INDEX idx_transacoes_data_transacao ON transacoes(data_transacao);
 
-No projeto de **Data Lake** e **DataMart** descrito, a combinação de **índices eficientes**, **particionamento de tabelas**, **consultas agregadas otimizadas**, **uso de tabelas materializadas** e **análise de planos de execução** é fundamental para garantir que o sistema consiga lidar com grandes volumes de dados de maneira eficiente e rápida. Implementar essas boas práticas no PostgreSQL pode resultar em uma performance significativamente melhorada, mesmo à medida que os dados aumentam.
+###No projeto de **Data Lake** e **DataMart** descrito, a combinação de **índices eficientes**, **particionamento de tabelas**, **consultas agregadas otimizadas**, **uso de tabelas materializadas** e **análise de planos de execução** é fundamental para garantir que o sistema seja capaz de lidar com grandes volumes de dados de maneira eficiente e rápida. A implementação dessas boas práticas no **PostgreSQL** pode resultar em uma performance significativamente melhorada, mesmo à medida que os dados aumentam.
 
 
 Para facilitar a obtenção de informações rápidas e importantes para as regras de negócio, algumas consultas SQL foram criadas:
