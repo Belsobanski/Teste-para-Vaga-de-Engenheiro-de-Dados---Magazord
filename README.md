@@ -110,4 +110,38 @@ Carregar essa tabela agregada no banco de dados **datamart** e salvar os dados n
 8. **Mensagem de Conclusão**:
    - Após a execução, o script exibe uma mensagem confirmando a criação da tabela no banco e o arquivo Parquet.
 
----
+## Banco de Dados DataMart no PostgreSQL
+
+Este banco de dados foi criado para armazenar os dados limpos, normalizados e deduplicados provenientes de diversas fontes, como transações de vendas, clientes e produtos. O objetivo é oferecer uma estrutura eficiente para análise de dados e tomada de decisões.
+
+### Estrutura do Banco de Dados
+
+O banco de dados DataMart contém as seguintes tabelas:
+
+- **clientes**: Contém as informações sobre os clientes, como `id_cliente`, `nome_cliente`, `email`, `telefone`.
+- **produtos**: Armazena dados sobre os produtos, incluindo `id_produto`, `nome_produto`, `categoria`, `preco`.
+- **transacoes**: Registra as transações realizadas pelos clientes, com campos como `id_transacao`, `id_cliente`, `id_produto`, `quantidade`, `data_transacao`.
+
+As tabelas foram populadas através de pipelines com os scripts:
+- **limpar_transformacao_nome_da_tabela.py**: Responsável pela limpeza, normalização e deduplicação dos dados antes de inseri-los nas tabelas.
+- **criar_carregar_nome_da_tabela.py**: Responsável por carregar os dados limpos nas tabelas correspondentes do banco de dados.
+
+Além disso, uma tabela agregada foi criada com os seguintes dados:
+- **Receita total por cliente**
+- **Número total de transações por cliente**
+- **Produto mais comprado por cliente**
+
+Essas informações são salvas também no DataLake, na camada **Trust**, garantindo que os dados mais confiáveis estejam disponíveis para futuras análises.
+
+## Melhorias de Performance
+
+Para otimizar a performance do banco de dados e garantir consultas rápidas, foram criados os seguintes índices nas tabelas:
+
+```sql
+CREATE INDEX idx_clientes_id ON clientes(id);
+CREATE INDEX idx_clientes_nome_sobrenome ON clientes(nome_cliente);
+CREATE INDEX idx_produtos_id ON produtos(id_produto);
+CREATE INDEX idx_produtos_descricao ON produtos(nome_produto);
+CREATE INDEX idx_transacoes_id_cliente ON transacoes(id_cliente);
+CREATE INDEX idx_transacoes_id_produto ON transacoes(id_produto);
+CREATE INDEX idx_transacoes_data_transacao ON transacoes(data_transacao);
