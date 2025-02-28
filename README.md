@@ -191,6 +191,25 @@ Essas consultas foram projetadas para fornecer informações rápidas e detalhad
 
 O banco de dados DataMart no PostgreSQL foi estruturado para oferecer dados limpos e otimizados, com foco na eficiência e na rapidez de acesso. As operações de transformação e carga foram automatizadas com pipelines, e as consultas analíticas fornecem insights valiosos para a empresa.
 
+O arquivo do banco de dados foi particionado devido ao seu tamanho total de 45.233kB, o que dificultaria o upload no GitHub. Para contornar essa limitação, foi utilizado o método `split` para dividir o arquivo em 3 partes:
+
+- `parte_1aa`
+- `parte_1ab`
+- `parte_1ac`
+
+O comando utilizado para dividir o arquivo foi:
+
+```bash
+split -b 22m seu_arquivo.sql parte_1
+
+Para unir as partes do arquivo de volta, foi utilizado o comando:
+
+```bash
+cat parte_1aa parte_1ab parte_1ac > arquivo_completo.sql
+
+# Esse processo foi realizado utilizando o Git Bash para facilitar o manuseio dos arquivos grandes, garantindo que o arquivo completo fosse reconstruído e pronto para ser utilizado.
+
+
 
 
 
