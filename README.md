@@ -150,7 +150,7 @@ CREATE INDEX idx_transacoes_id_cliente ON transacoes(id_cliente);
 CREATE INDEX idx_transacoes_id_produto ON transacoes(id_produto);
 CREATE INDEX idx_transacoes_data_transacao ON transacoes(data_transacao);
 
-###No projeto de Data Lake e DataMart descrito, a combinação de
+No projeto de Data Lake e DataMart descrito, a combinação de
 índices eficientes, particionamento de tabelas, consultas agregadas otimizadas,
 uso de tabelas materializadas e análise de planos de execução é fundamental para garantir que
 o sistema seja capaz de lidar com grandes volumes de dados de maneira eficiente e rápida.
