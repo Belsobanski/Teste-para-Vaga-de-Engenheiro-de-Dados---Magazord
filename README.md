@@ -109,6 +109,11 @@ Carregar essa tabela agregada no banco de dados **datamart** e salvar os dados n
 
 8. **Mensagem de Conclusão**:
    - Após a execução, o script exibe uma mensagem confirmando a criação da tabela no banco e o arquivo Parquet.
+  
+Toda a validação do pipeline de popular o banco de dados com dados limpos e normalizados foi realizada utilizando o script `teste.py`. Esse script foi utilizado para confirmar se os dados estavam sendo transformados corretamente antes de serem salvos no Data Lake e no PostgreSQL. 
+
+A validação envolveu garantir que as operações de transformação e limpeza estavam sendo aplicadas corretamente aos dados antes da sua carga nos sistemas de armazenamento. O processo de validação foi fundamental para assegurar que os dados no Data Lake e no banco de dados PostgreSQL estivessem consistentes, precisos e prontos para uso em análises e consultas.
+
 
 ## Banco de Dados DataMart no PostgreSQL
 
