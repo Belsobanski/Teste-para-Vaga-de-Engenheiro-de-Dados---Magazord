@@ -145,3 +145,46 @@ CREATE INDEX idx_produtos_descricao ON produtos(nome_produto);
 CREATE INDEX idx_transacoes_id_cliente ON transacoes(id_cliente);
 CREATE INDEX idx_transacoes_id_produto ON transacoes(id_produto);
 CREATE INDEX idx_transacoes_data_transacao ON transacoes(data_transacao);
+# Consultas Analíticas
+
+Para facilitar a obtenção de informações rápidas e importantes para as regras de negócio, algumas consultas SQL foram criadas:
+
+### Número de clientes ativos (últimos 3 meses):
+
+```sql
+SELECT 
+    COUNT(DISTINCT t.id_cliente) AS clientes_ativos
+FROM 
+    transacoes t
+WHERE 
+    t.data_transacao >= CURRENT_DATE - INTERVAL '3 months';
+### Receita total por produto:
+
+```sql
+SELECT p.id_produto, SUM(t.quantidade * p.preco) AS receita_total
+FROM transacoes t
+JOIN produtos p ON t.id_produto = p.id_produto
+GROUP BY p.id_produto
+ORDER BY receita_total DESC;
+
+### Top 5 produtos mais vendidos (ano de 2024):
+
+```sql
+SELECT p.nome_produto, SUM(t.quantidade) AS total_vendido
+FROM transacoes t
+JOIN produtos p ON t.id_produto = p.id_produto
+WHERE t.data_transacao BETWEEN '2024-01-01' AND '2024-12-31'
+GROUP BY p.nome_produto
+ORDER BY total_vendido DESC
+LIMIT 5;
+
+
+Essas consultas foram projetadas para fornecer informações rápidas e detalhadas sobre o desempenho de vendas, clientes ativos e os produtos mais vendidos, ajudando a orientar as decisões de negócio.
+
+# Conclusão
+
+O banco de dados DataMart no PostgreSQL foi estruturado para oferecer dados limpos e otimizados, com foco na eficiência e na rapidez de acesso. As operações de transformação e carga foram automatizadas com pipelines, e as consultas analíticas fornecem insights valiosos para a empresa.
+
+
+
+
