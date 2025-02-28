@@ -158,6 +158,7 @@ FROM
     transacoes t
 WHERE 
     t.data_transacao >= CURRENT_DATE - INTERVAL '3 months';
+
 ### Receita total por produto:
 
 ```sql
