@@ -18,6 +18,17 @@ Contém os dados agregados para análises mais performáticas:
 - Número total de transações por cliente.
 - Produto mais comprado por cliente.
 
+## Tecnologias Utilizadas
+
+As tecnologias utilizadas nesse projeto incluem:
+
+- **PostgreSQL**: Banco de dados relacional utilizado para armazenar dados limpos e otimizados no DataMart.
+- **SQL**: Linguagem de consulta usada para criar e executar consultas analíticas.
+- **Python**: Utilizado para a criação de pipelines e scripts de transformação de dados.
+- **GitHub**: Plataforma para versionamento de código, incluindo o gerenciamento do código-fonte e das partes do arquivo de banco de dados.
+- **Git Bash**: Ferramenta de linha de comando utilizada para manuseio e manipulação de arquivos grandes, como o uso de comandos `split` e `cat` para dividir e unir arquivos.
+
+
 ## Descrição dos Scripts
 
 ### **1. Scripts de Limpeza e Transformação (camada `process`)**
