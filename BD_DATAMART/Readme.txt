@@ -8,7 +8,7 @@ parte_1ac
 utilizado o comando: 
 split -b 22m seu_arquivo.sql parte_1
 
-para unir as partes do arquivo, camos utilizar o comando:  cat parte_1aa parte_1ab parte_1ac > arquivo_completo.sql
+para unir as partes do arquivo, vamos utilizar o comando:  cat parte_1aa parte_1ab parte_1ac > arquivo_completo.sql
 
 usei o git bash para fazer o processo.
 
