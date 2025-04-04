@@ -1,7 +1,5 @@
 # Teste para Vaga de Engenheiro de Dados 
 
-Link do teste: Teste - Data Engineer 🚀  https://github.com/Belsobanski/data_engineer_test/blob/master/README.md
-
 ## Data Lake Simulation
 
 Este repositório simula um **Data Lake** com três camadas principais: **raw_layer**, **process** e **trusted**. O objetivo do projeto é demonstrar como construir um pipeline de ingestão e transformação de dados usando scripts Python para manipulação de arquivos CSV e carregamento em um banco de dados.
